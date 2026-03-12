@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.screen {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #eef;
+    color: #334;
+}
+.leftside {
+    display: flex;
+    flex: 1;
+    height: 100vh;
+}
+.leftside img {
+    width: 100%;
+    object-fit: cover;
+    height: inherit;
+}
+.rightside {
+    width: 400px;
+    padding: 50px;
+    background-color: #eef;
+}
+form {
+    margin: 20px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.rightside--input {
+    position: relative;
+}
+.rightside--input input:not([type="submit"]) {
+    width: 100%;
+    font-size: 16px;
+    border: 0;
+    border-bottom: 2px solid #555;
+    background-color: #eef;
+    padding: 5px;
+    outline: 0;
+}
+.rightside--input label {
+    position: absolute;
+    display: inline-block;
+    left: 5px;
+    bottom: 5px;
+    pointer-events: none;
+    transition: 0.5s ease-in-out;
+}
+.rightside--input input:focus,
+.rightside--input input:valid {
+    border-bottom: 2px solid #8bb3cc;
+}
+.rightside--input input:focus ~ label,
+.rightside--input input:valid ~ label {
+    transform: translateY(-24px);
+    font-size: 12px;
+    color: #8bb3cc;
+}
+.rightside input[type="submit"] {
+    width: 100%;
+    color: #8bb3cc;
+    background-color: #eef;
+    border: 1px solid #8bb3cc;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 14px;
+    outline: 0;
+}
+.rightside input[type="submit"]:hover {
+    color: #eef;
+    background-color: #8bb3cc;
+    transition: all 0.3s ease-in;
+}
+.rightside a {
+    text-decoration: none;
+    color: #8bb3cc;
+}
+.rightside a:hover {
+    color: #65889e;
+}
+
+.error {
+    position: absolute;
+    left: 0;
+    bottom: -18px;
+    font-size: 11px;
+    background-color: #f00;
+    color: #fff;
+    padding: 4px;
+    border-radius: 5px;
+}
+
+@media (min-width: 600px) and (max-width: 800px) {
+    .rightside {
+        width: 300px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 599px) {
+    .rightside {
+        width: 90%;
+        padding: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 5px;
+        background-color: #eefc;
+    }
+}

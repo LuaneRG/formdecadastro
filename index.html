@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="assets/css/styles.css" />
+        <script src="assets/js/scripts.js" defer></script>
+        <title>Formulário</title>
+    </head>
+    <body>
+        <div class="screen">
+            <div class="leftside">
+                <img src="assets/images/world.jpg" alt="Imagem da Esquerda" />
+            </div>
+            <div class="rightside">
+                <h1>Crie uma conta</h1>
+
+                <form
+                    method="post"
+                    action="outroarquivo.php"
+                    class="b7validator"
+                >
+                    <div class="rightside--input">
+                        <input
+                            type="text"
+                            name="name"
+                            id="name"
+                            autofocus
+                            required
+                            data-rules="required|min=2"
+                        />
+                        <label for="name">Seu nome: </label>
+                    </div>
+
+                    <!--Required para se um campo for obrigatório, o nome tem que ter no mínimo 2 caracteres-->
+                    <div class="rightside--input">
+                        <input
+                            type="text"
+                            name="email"
+                            id="email"
+                            required
+                            data-rules="required|email"
+                        />
+                        <label for="email">Seu email: </label>
+                    </div>
+
+                    <div class="rightside--input">
+                        <input
+                            type="password"
+                            name="password"
+                            id="password"
+                            autocomplete="off"
+                            required
+                            data-rules="required|min=4"
+                        />
+                        <label for="password">Sua senha: </label>
+                    </div>
+
+                    <input type="submit" value="Cadastrar" />
+                </form>
+                <div>Já tem uma conta? <a href="#">Faça o login</a></div>
+            </div>
+        </div>
+    </body>
+</html>
