@@ -1,6 +1,3 @@
-/*Nota: Essa validação é uma validação front-end, se o user quiser desativar o js do site, ele pode burlar essas
-regras, então será necessário validar também no servidor (back-end) que receberá esses dados*/
-
 let B7validator = {
     handleSubmit: (event) => {
         event.preventDefault();
@@ -26,12 +23,10 @@ let B7validator = {
     checkInput: (input) => {
         let rules = input.getAttribute("data-rules");
         if (rules !== null) {
-            //Quando houver 2 regras; se não houver | para separar, vai retornar um array com um elemento só, então prossiga
             rules = rules.split("|");
             for (let k in rules) {
-                //Aqui é a mesma coisa do array, o = só vai ter quando houver um valor associado a regra, ex.: min=2
                 let rDetail = rules[k].split("=");
-                //0 por que queremos o primeiro item do array, a regra
+
                 switch (rDetail[0]) {
                     case "required":
                         if (input.value == "") {
@@ -39,7 +34,6 @@ let B7validator = {
                         }
                         break;
                     case "min":
-                        // rDetail[1] é onde vai o número mínimo no HTML
                         if (input.value.length < rDetail[1]) {
                             return `Campo tem que ter pelo menos ${rDetail[1]} caracteres`;
                         }
@@ -67,7 +61,6 @@ let B7validator = {
         errorElement.innerHTML = error;
 
         input.parentElement.insertBefore(
-            //Gambiarra para colocar o aviso do erro depois do campo do input
             errorElement,
             input.nextElementSibling,
         );
